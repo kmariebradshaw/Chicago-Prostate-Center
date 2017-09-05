@@ -129,8 +129,12 @@
     background: url("{{'CPC-Home-Image.jpg' | asset_url }}"); 
     padding: 50px 0px 50px 50px; 
       box-shadow: 0px 15px 25px darkgrey;
+           background-repeat: no-repeat; 
+      background-size: cover; 
 
    }
+
+   .invis { visibility: hidden; }
   
   #atf h2, #atf h5, #atf h4, #atf p { color: white; text-transform: none;} 
   
@@ -193,7 +197,18 @@
     position: absolute;
     margin-left: 200px;
 }
-  
+
+  .circle { 
+    width: 15px; 
+    height: 15px;
+    display: inline-block; 
+    background: #0d5da3; 
+    margin: 50px 10px;
+    border-radius: 50%; 
+    cursor: pointer; 
+  }
+
+  .highlight { background: #5e9ecd; } 
   #middle-journey { margin-top: 70px; }
   #final-journey { margin-top: 140px; } 
 </style>
@@ -211,8 +226,44 @@
   <h5 id="atf-intro">-Brian J. Moran, MD</h5>
   <p>Medican Director, Chicago<br>Prostate Cancer Center</p>
   </div>
-  
+</div>
 </section>
+<div>
+  <center>
+    <div class="circle highlight main-slide" id="slide1" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/CPC-Home-Image.jpg?7844792783149817079"></div>
+    <div class="circle" id="slide2" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/building.jpg?17545526770728315187"></div>
+    <div class="circle" id="slide3" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/circleslide.jpg?17545526770728315187"></div>
+  </center>
+</div>
+<script>
+  $('.circle').click(function(){
+    $(this).addClass('highlight').siblings().removeClass('highlight');
+    if (!$(this).hasClass('main-slide')){
+      $('#atf').children().addClass('invis'); 
+    }
+    else {
+      $('#atf').children().removeClass('invis'); 
+    }
+    var imageSource = $(this).attr('img-source'); 
+    $('#atf').css("backgroundImage", "url(" + "'" + imageSource + "'" + ")"); 
+
+  });
+  
+  $(document).ready(function() {
+    var y = 1 
+    setInterval(function(){
+    var atfSlide = "#slide" + y
+    $(atfSlide).trigger('click');
+      if (y < 3) {
+      y += 1 
+      }
+      else {
+        y = 1 
+      }
+
+    }, 10000)
+   });
+</script>
 <section id="treat-opts">
   <h1>Treatment Options Compared</h1>
   <table>
