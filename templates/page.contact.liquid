@@ -3,10 +3,10 @@
 </style> 
 
 
-      <div class="section-header text-center">
+      <div class="section-header text-center contact-temp">
         <h1>{{ page.title }}</h1>
       </div>
-
+ 
      <div class="rte">
         <div class="side-nav">
           <ul>
@@ -45,10 +45,43 @@
           <label for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label>
           <input type="tel" id="ContactFormPhone" name="contact[phone]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
 
-          <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
-          <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          <div class="grid">
+            <div class="grid__item">
+              <label for="AddressAddress1New">Address</label>
+              <input type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}">
 
-          <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="grid__item one-third">
+              <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
+              <input type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}">
+            </div>
+
+            <div class="grid__item one-third">
+              <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+              <select id="AddressCountryNew" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
+            </div>
+            
+                <div class="grid__item one-third">
+          <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+          <input type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters">
+        </div>
+          </div>
+
+          <div id="AddressProvinceContainerNew" style="display:none">
+            <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+            <select id="AddressProvinceNew" name="address[province]" data-default="{{ form.province }}"></select>
+          </div>
+
+          {% if page.title == "Request a Brochure" %}
+            <div style="height: 50px;">
+          {% else %}
+            <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
+            <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          {% endif %}
+          <input type="submit" class="btn lightblue" value="{{ 'contact.form.submit' | t }}">
 
         {% endform %}
       </div>
