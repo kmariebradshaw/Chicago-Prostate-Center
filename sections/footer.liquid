@@ -1,0 +1,89 @@
+{%- assign social_icons = false -%}
+
+{% if
+  settings.social_twitter_link != blank
+  or settings.social_facebook_link != blank
+  or settings.social_pinterest_link != blank
+  or settings.social_instagram_link != blank
+  or settings.social_tumblr_link != blank
+  or settings.social_snapchat_link != blank
+  or settings.social_youtube_link != blank
+  or settings.social_vimeo_link != blank
+  or template.name == 'article'
+  or template.name == 'blog'
+%}
+  {%- assign social_icons = true -%}
+{% endif %}
+
+<footer class="site-footer" role="contentinfo">
+  <div class="page-width">
+    <div class="grid grid--no-gutters">
+      <div class="grid__item{% if section.settings.footer_newsletter_enable and section.settings.footer_linklist_two != blank %} medium-up--one-quarter{% elsif section.settings.footer_linklist_two == blank and section.settings.footer_newsletter_enable %} medium-up--one-half{% endif %}">
+        <img src="{{'CPC-logo_white.png' | asset_url}}" id="footer-logo"/>
+        {%- assign footer_linklist = section.settings.footer_linklist -%}
+        {% if linklists[footer_linklist].links.size > 0 %}
+          <ul class="site-footer__linklist" style="margin-top: 20px;">
+            {% for link in linklists[footer_linklist].links %}
+            <li class="site-footer__linklist-item"><a href="#">About Prostate Cancer</a></li>
+            <li class="site-footer__linklist-item"><a href="#">Early Signs & Symptoms</a></li>
+            <li class="site-footer__linklist-item"><a href="#">Testing & Diagnosis</a></li>
+            <li class="site-footer__linklist-item"><a href="#">Treatment Options</a></li>
+            <ul id="sub-footer">
+              <li>Brachytherapy (Seed Implant)</li>
+              <li>Prostate Cancer Facts & Figures</li>
+              <li>Life After Prostate Cancer</li>
+            </ul>
+            <li class="site-footer__linklist-item"><a href="#">About Chicago Prostate Cancer Center</a></li>
+            <li class="site-footer__linklist-item"><a href="#">Directions to CPCC</a></li>
+            <li class="site-footer__linklist-item"><a href="#">Referring Physicians</a></li>
+            <li class="site-footer__linklist-item"><a href="#">Patent Services</a></li>
+            <li class="site-footer__linklist-item"><a href="#">Bill Payment</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+         </div>
+
+   <div class="social">
+     <a class="btn-link lightblue">Schedule an Appointment</a>
+     <p>815 Pasquinelli Dr.</br>
+       Westmont, IL 606559</p>
+     <p>630-654-2515</p>
+     <img src="{{'facebook-icon.png'| asset_url}}" class="soc-icon"/>
+     <img src="{{'twitter-icon.png'| asset_url}}" class="soc-icon"/>
+     <img src="{{'linked-in-icon.png'| asset_url}}" class="soc-icon"/>
+     <img src="{{'instagram-icon.png'| asset_url}}" class="soc-icon"/>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "footer_linklist",
+        "label": "Primary menu",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_two",
+        "label": "Additional menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_newsletter_enable",
+        "label": "Show newsletter signup",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Show payment icons",
+        "default": false
+      }
+    ]
+  }
+{% endschema %}
