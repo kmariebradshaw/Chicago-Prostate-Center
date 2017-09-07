@@ -76,7 +76,7 @@
           </div>
 
           {% if page.title == "Request a Brochure" %}
-            <div style="height: 50px;">
+            <div style="height: 50px;"></div>
           {% else %}
             <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
             <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>

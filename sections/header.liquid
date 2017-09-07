@@ -122,8 +122,6 @@
     </ul>
   </nav>
 
-  {% if section.settings.message %}
-    {% if section.settings.home_page_only == false or template.name == 'index' %}
       <style>
         .announcement-bar {
           background-color: {{ section.settings.color_bg }};
@@ -146,22 +144,12 @@
         }
       </style>
 
-      {% if section.settings.message_link == blank %}
         <div class="announcement-bar">
-      {% else %}
-        <a href="{{ section.settings.message_link }}" class="announcement-bar announcement-bar--link">
-      {% endif %}
+        <p class="announcement-bar__message" style="margin: 0 auto;">Questions? Call Us at (630) 654-2515</p>
 
-        <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
-
-      {% if section.settings.message_link == blank %}
         </div>
-      {% else %}
-        </a>
-      {% endif %}
+  
 
-    {% endif %}
-  {% endif %}
 
   <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
     <div class="grid grid--no-gutters grid--table">
