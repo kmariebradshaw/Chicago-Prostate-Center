@@ -73,9 +73,9 @@
   body { max-width: 1366px; margin: 0 auto;} 
 
   table {
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1000px;
     margin-top: 50px;
   }
 
@@ -117,10 +117,10 @@
   
   .info-box h2 { letter-spacing: normal !important; } 
   
-  .em-right { border-right: 10px solid white; }
+/*  .em-right { border-right: 10px solid white; }
   .em-left { border-left: 10px solid white; }
   .em-top { border-top: 10px solid white; }
-  .em-bottom { border-bottom: 10px solid white; }
+  .em-bottom { border-bottom: 10px solid white; }*/
   #journey {
     padding: 50px; 
     width: 100%; 
@@ -133,8 +133,9 @@
     background: url("{{'CPC-Home-Image.jpg' | asset_url }}"); 
     padding: 50px 0px 50px 50px; 
       box-shadow: 0px 15px 25px darkgrey;
-           background-repeat: no-repeat; 
+     background-repeat: no-repeat; 
       background-size: cover; 
+          background-position: center; 
 
    }
 
@@ -177,13 +178,13 @@
     border: 2px solid white;
     color: white;
     text-align: center;
-    font-size: 11pt; 
+    font-size: 13pt; 
   } 
   
   td a { color: white; } 
   th:empty {
   visibility: hidden;
-}
+ }
   
   .sm {
     display: block;
@@ -236,7 +237,8 @@
   <center>
     <div class="circle highlight main-slide" id="slide1" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/CPC-Home-Image.jpg?7844792783149817079"></div>
     <div class="circle" id="slide2" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/building.jpg?17545526770728315187"></div>
-    <div class="circle" id="slide3" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/circleslide.jpg?17545526770728315187"></div>
+    <div class="circle" id="slide3" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/reception.jpg?7845200647143113927"></div>
+    <div class="circle" id="slide4" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/center.jpg?16301856489799910333"></div>
   </center>
 </div>
 <script>
@@ -258,7 +260,7 @@
     setInterval(function(){
     var atfSlide = "#slide" + y
     $(atfSlide).trigger('click');
-      if (y < 3) {
+      if (y < 4) {
       y += 1 
       }
       else {
@@ -273,7 +275,7 @@
   <table>
    <tr>
     <th></th>
-    <th colspan="2" style="text-align: center;" class="cpc-ap em-left em-right em-top">CPC Treatment</th>
+    <th colspan="2" style="text-align: center;" class="cpc-ap em-left em-right em-top">Prostate Center Treatment</th>
     <th></th>
     <th></th>
   </tr>
@@ -337,24 +339,24 @@
     <div class="ar-journey" id="initial-journey">➡</div>
     <h2>Early Signs and Symptoms</h2>
     <p>In it's early stages, porstate cancer may cause no symptoms. That's why regular testing is important for some men.</p>
-    <a href="#">Find out if you should be tested</a>
+    <a href="/pages/prostate-cancer">Find out if you should be tested</a>
   </div>
    <div class="info-box">
     <div class="ar-journey" id="middle-journey">➡</div>
     <h2>Testing and Diagnosis</h2>
     <p>A positive test result doesn't necessarily mean prostate cancer. Further testing can determine if it's cancer.</p>
-    <a href="#">What your test results mean</a>
+    <a href="/pages/prostate-cancer">What your test results mean</a>
   </div>
    <div class="info-box">
     <div class="ar-journey" id="final-journey">➡</div>
     <h2>Treatment <br> Options</h2>
     <p>If you've been diagnosed with prostate cancer, choosing a course of treatment is a critical step.</p>
-    <a href="#">Get the facts and the latest research</a>
+    <a href="/pages/prostate-cancer">Get the facts and the latest research</a>
   </div>
    <div class="info-box">
     <h2>Recovering from Prostate Cancer</h2>
-    <p>Congratulations! You've completed your treatment! But what is life like after prostate cancer?</p>
-    <a href="#">What to expect after treatment</a>
+    <p>Congratulations! <br> You have completed your treatment! <br>But what is life like after prostate cancer?</p>
+    <a href="/pages/prostate-cancer">What to expect after treatment</a>
     </div>
   </center>
 </section>
@@ -367,8 +369,8 @@
     <img src="{{'man1.jpg'|asset_url}}" />
     <p><b>"I was convinced I'd be making a terrible mistake by not visiting you."</b></p>
     <p>"I have to admit that I was prepared to have the DaVinci Prostatectomy after speaking with my urologist. In fact, even before meeting with you I was seriously considering cancelling my appointment (consultation) with you..."</p>
-    <p>-Dave A</p>
-    <p><i>Plainfield, Illinois</i></p>
+    <p>-Dave A<br>
+    <i>Plainfield, Illinois</i></p>
   </div>
   <div>
     <img src="{{'man2.jpg'|asset_url}}" />
@@ -382,7 +384,7 @@
     <p><b>"Thank you."</b></p>
     <p>"Very pleased with the level of competence of the entire staff. I very much appreciated the professional and personal treatment I received."</p>
     <p>-Herbet M<br>
-    <i>Plainfield, Illinois</i></p>
+    <i>Wheaton, Illinois</i></p>
   </div>
   <div>
     <img src="{{'man4.jpg'|asset_url}}" />
