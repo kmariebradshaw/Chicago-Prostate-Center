@@ -17,6 +17,27 @@ body .form-vertical [type="submit"], .form-vertical .btn {
 body .rte .appoint-side-nav p { color: white !important; } 
 .rte p { color: black !important; }
 
+.announcement-bar__message {
+    color: #fff;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    background-color: #0d5da3;
+}
+
+body .main-content {
+    padding-top: 131px !important;
+}
+
+body .site-header {
+    background-color: #fff;
+    position: relative;
+    padding: 0 55px;
+    position: fixed;
+    z-index: 9999;
+    margin-top: 44px;
+}
 .rte { color: black !important; } 
 body header ul li .sub-nav-main {
     display: none;
@@ -179,8 +200,8 @@ body .lightblue { background: #5e9ecd !important; }
 
 .site-footer p, .site-footer a { color: white !important; } 
 
-body .main-content { padding-top: 0; } 
-
+{% comment %}body .main-content { padding-top: 0; } 
+{% endcomment %}
 #sub-footer {
     column-count: 1;
     font-size: 8pt;
