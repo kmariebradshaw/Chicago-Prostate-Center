@@ -6,6 +6,9 @@ body .medium-up--one-half {
   body .site-header__icons { display: none !important; } 
 }
 
+
+body { background-color: #f2f4f7 !important;}
+
 body .form-vertical [type="submit"], .form-vertical .btn {
     display: inline-block;
     width: 100%;
@@ -24,20 +27,33 @@ body .rte .appoint-side-nav p { color: white !important; }
     top: 0;
     width: 100%;
     background-color: #0d5da3;
+    max-width: 1366px;  
 }
 
+#testimonials {
+   background: #f2f4f7; 
+    background: -webkit-linear-gradient(#f2f4f7, #fff);
+    background: -o-linear-gradient(#f2f4f7, #fff);
+    background: -moz-linear-gradient(#f2f4f7, #fff); 
+    background: linear-gradient(#f2f4f7, #fff); 
+}
 body .main-content {
     padding-top: 131px !important;
 }
 
 body .site-header {
-    background-color: #fff;
+{% comment %}    background-color: #fff;
+{% endcomment %}    
+    background-color: #f2f4f7; 
     position: relative;
     padding: 0 55px;
     position: fixed;
     z-index: 9999;
-    margin-top: 44px;
-}
+    max-width: 1366px; 
+    margin: 0 auto; 
+    margin-top: 44px; 
+{% comment %}    margin-top: 44px;
+{% endcomment %}}
 .rte { color: black !important; } 
 body header ul li .sub-nav-main {
     display: none;
@@ -100,12 +116,13 @@ body .grid--table>.grid__item {
 .contact-temp {background: url("{{'header3.jpg'|asset_url}}"); } 
 
       .section-header {
-        background-repeat: no-repeat; 
-        padding: 182px; 
-        color: white; 
-        width: 100%;
-        height: 0;
-        }
+    background-repeat: no-repeat;
+    padding: 120px;
+    color: white;
+    width: 100%;
+    height: 0;
+    background-position: center;
+}
 
       p {
         color: black;
