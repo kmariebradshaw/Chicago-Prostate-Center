@@ -24,20 +24,14 @@
         {% if linklists[footer_linklist].links.size > 0 %}
           <ul class="site-footer__linklist" style="margin-top: 20px;">
             {% for link in linklists[footer_linklist].links %}
-            <li class="site-footer__linklist-item"><a href="#">About Prostate Cancer</a></li>
-            <li class="site-footer__linklist-item"><a href="#">Early Signs & Symptoms</a></li>
-            <li class="site-footer__linklist-item"><a href="#">Testing & Diagnosis</a></li>
-            <li class="site-footer__linklist-item"><a href="#">Treatment Options</a></li>
-            <ul id="sub-footer">
-              <li>Brachytherapy (Seed Implant)</li>
-              <li>Prostate Cancer Facts & Figures</li>
-              <li>Life After Prostate Cancer</li>
-            </ul>
-            <li class="site-footer__linklist-item"><a href="#">About Chicago Prostate Cancer Center</a></li>
-            <li class="site-footer__linklist-item"><a href="#">Directions to CPCC</a></li>
-            <li class="site-footer__linklist-item"><a href="#">Referring Physicians</a></li>
-            <li class="site-footer__linklist-item"><a href="#">Patent Services</a></li>
-            <li class="site-footer__linklist-item"><a href="#">Bill Payment</a></li>
+            <li class="site-footer__linklist-item"><a href="/pages/prostate-cancer">About Prostate Cancer</a></li>
+            <li class="site-footer__linklist-item"><a href="/pages/diagnosis">Testing & Diagnosis</a></li>
+            <li class="site-footer__linklist-item"><a href="/pages/treatment-options">Treatment Options</a></li>
+            <li class="site-footer__linklist-item"><a href="/pages/about-us">About Chicago Prostate Cancer Center</a></li>
+            <li class="site-footer__linklist-item"><a href="/pages/location">Directions to CPCC</a></li>
+            <li class="site-footer__linklist-item"><a href="{{'PSA.pdf' | asset_url}}" target="_blank">Download a Brochure</a></li>
+            <li class="site-footer__linklist-item"><a href="/pages/FAQ">Frequently Asked Questions</a></li>
+            <li class="site-footer__linklist-item"><a href="https://prostateimplant.com/pay-your-bill">Bill Payment</a></li>
             {% endfor %}
           </ul>
         {% endif %}
@@ -45,14 +39,14 @@
          </div>
 
    <div class="social">
-     <a class="btn-link lightblue" style="margin-left: -15px;">Schedule an Appointment</a>
+     <a href="/pages/schedule" class="btn-link lightblue" style="margin-left: -15px;">Schedule an Appointment</a>
      <p>815 Pasquinelli Dr.</br>
        Westmont, IL 606559</p>
      <p>630-654-2515</p>
-     <img src="{{'facebook.png'| asset_url}}" class="soc-icon"/>
-     <img src="{{'twitter.jpg'| asset_url}}" class="soc-icon"/>
-     <img src="{{'linkedin.png'| asset_url}}" class="soc-icon"/>
-     <img src="{{'instagram.png'| asset_url}}" class="soc-icon"/>
+     <a href="https://www.facebook.com/ChicagoProstate"><img src="{{'fb-icon.png'| asset_url}}" class="soc-icon"/></a>
+     <a href="https://twitter.com/ChicagoProstate"><img src="{{'twitter-icon.png'| asset_url}}" class="soc-icon"/></a>
+     <a href="https://prostateimplant.com/blog/"><img src="{{'blog-icon.png'| asset_url}}" class="soc-icon"/></a>
+     <a href="https://www.youtube.com/user/ChicagoProstateCtr"><img src="{{'youtube-icon.png'| asset_url}}" class="soc-icon"/></a>
   </div>
 </footer>
 
