@@ -11,7 +11,7 @@
         <div class="side-nav">
           <ul>
             <li class="btn-link"><a href="/pages/contact">Contact<br>Us</a><div>▶</div> </li>
-            <li class="btn-link"><a href="/pages/brochure">Request a<br>Brochure</a><div>▶</div> </li>
+            <li class="btn-link"><a href="{{'PSA.pdf' | asset_url}}" target="_blank">Download a<br>Brochure</a><div>▶</div> </li>
             <li class="btn-link"><a href="/pages/schedule">Schedule an<br> Appointment</a><div>▶</div></li>
             <li class="btn-link"><a href="/pages/support">Attend an Informational<br>Suppordt Group</a><div>▶</div></li>
           </ul>
@@ -76,12 +76,9 @@
             <select id="AddressProvinceNew" name="address[province]" data-default="{{ form.province }}"></select>
           </div>
 
-          {% if page.title == "Request a Brochure" %}
-            <div style="height: 50px;"></div>
-          {% else %}
+         
             <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
             <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
-          {% endif %}
           <input type="submit" class="btn lightblue" value="{{ 'contact.form.submit' | t }}">
 
         {% endform %}
