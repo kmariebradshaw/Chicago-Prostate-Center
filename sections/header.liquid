@@ -9,7 +9,7 @@
     position: absolute;
     z-index: 5;
     top: -10px;
-    right: 66%;
+    right: 82%;
 }
   .sub-nav-main li:hover {background: #5e9ecd;} 
   
@@ -204,22 +204,32 @@
       {% if section.settings.align_logo == 'left' %}
         <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
           <ul>
+          <li><a href="/pages/about-us" class="main-nav">About</a>
+              <ul class="sub-nav-main">
+                <li><a href="/pages/about-us">About Us</a></li>
+                <li><a href="/pages/philosophy">Philosophy</a></li>
+                <li><a href="/pages/location">Location</a></li>
+              </ul>
+            </li>
 			<li><a href="/pages/prostate-cancer" class="main-nav">Prostate Cancer</a>
               <ul class="sub-nav-main">
                 <li><a href="/pages/prostate-cancer">What is it?</a></li>
                 <li><a href="/pages/diagnosis">Diagnosis</a></li>
                 <li><a href="/pages/treatment-options">Treatment Options <br>& Second Opinions</a></li>
+                <li><a href="/pages/understanding-your-psa">Understanding your PSA</a></li>
               </ul>
             </li>
-            <li><a href="#" class="main-nav">Treament Options</a>
+            <li><a href="/pages/prostate-biopsy" class="main-nav">Patient Services</a>
                <ul class="sub-nav-main">
-                <li><a href="/pages/brachytherapy">Brachytherapy</a></li>
-                 <li><a href="/pages/why-brachytherapy">Why Brachytherapy</a></li>
-                <li><a href="/pages/medical-physics">Medical Physics / Quality Assurance</a></li>
-                 <li><a href="/pages/prostate-biopsy">Prostate Biopsy</a></li>
+                <li><a href="/pages/prostate-biopsy">Prostate Biopsy</a></li>
+                <li><a href="/pages/brachytherapy">LDR Brachytherapy</a></li>
+                <li><a href="/pages/focal-therapy">Focal Therapy</a></li>
+                <li><a href="/pages/active-surveillance">Active Surveillance</a></li>
+                <li><a href="/pages/faq">FAQ</a></li>
+
               </ul>
             </li>
-            <li><a href="#" class="main-nav">Patient Information</a>
+            <li><a href="/pages/initial-visit" class="main-nav">Patient Information</a>
              <ul class="sub-nav-main">
                 <li><a href="/pages/initial-visit">Initial Visit</a></li>
                <li><a href="/pages/patient-forms">Patient Forms</a></li>
@@ -230,8 +240,15 @@
                 <li><a href="/pages/resources">Resources</a></li>
               </ul>
             </li>
+            <li><a href="/pages/events" class="main-nav">News & Events</a>
+              <ul class="sub-nav-main">
+                <li><a href="/pages/events">Upcoming Events</a></li>
+                <li><a href="/pages/support">Support Groups</a></li>
+                <li><a href="/pages/news">In the News</a></li>
+              </ul>
+            </li>
           </ul>
-      <a href="/pages/schedule" class="btn-link">Schedule an Appointment</a>
+      <a href="/pages/contact" class="btn-link">Contact Us</a>
       </nav>
       {% endif %}
 

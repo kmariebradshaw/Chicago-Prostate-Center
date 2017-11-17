@@ -6,6 +6,9 @@ body .medium-up--one-half {
   body .site-header__icons { display: none !important; } 
 }
 
+
+body { background-color: #f2f4f7 !important;}
+
 body .form-vertical [type="submit"], .form-vertical .btn {
     display: inline-block;
     width: 100%;
@@ -26,17 +29,26 @@ body .rte .appoint-side-nav p { color: white !important; }
     background-color: #0d5da3;
 }
 
+#testimonials {
+   background: #f2f4f7; 
+    background: -webkit-linear-gradient(#f2f4f7, #fff);
+    background: -o-linear-gradient(#f2f4f7, #fff);
+    background: -moz-linear-gradient(#f2f4f7, #fff); 
+    background: linear-gradient(#f2f4f7, #fff); 
+}
 body .main-content {
     padding-top: 131px !important;
 }
 
+#divFormillaChatCtr small { display: none !important; }
 body .site-header {
-    background-color: #fff;
+    background-color: #f2f4f7; 
     position: relative;
     padding: 0 55px;
     position: fixed;
     z-index: 9999;
-    margin-top: 44px;
+    margin: 0 auto; 
+    margin-top: 44px; 
 }
 .rte { color: black !important; } 
 body header ul li .sub-nav-main {
@@ -90,6 +102,10 @@ body .grid--table>.grid__item {
 
 .appoint-side-nav p {color: white; margin: 0 auto;  } 
 
+.rte { 
+  max-width: 1366px; 
+  margin: 0 auto; 
+}
 .rte ul, .rte ol, .appoint-side-nav {
   margin: 0 0 50px 35px;
 }
@@ -100,12 +116,14 @@ body .grid--table>.grid__item {
 .contact-temp {background: url("{{'header3.jpg'|asset_url}}"); } 
 
       .section-header {
-        background-repeat: no-repeat; 
-        padding: 182px; 
-        color: white; 
-        width: 100%;
-        height: 0;
-        }
+    background-repeat: no-repeat;
+    background-size: cover; 
+    padding: 120px;
+    color: white;
+    width: 100%;
+    height: 0;
+    background-position: center;
+}
 
       p {
         color: black;
@@ -213,7 +231,6 @@ body .lightblue { background: #5e9ecd !important; }
     cursor: pointer;
 }
 
-body { max-width: 1366px; margin: 0 auto !important; } 
 /*============================================================================
   Debut | Built with Shopify Slate
 
