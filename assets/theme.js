@@ -1,5 +1,5 @@
 var currentPage = location.pathname;
-$('a').each(function() {
+$('.rte li a').each(function() {
     var currentHref = $(this).attr('href');
     if(currentHref == currentPage) {
         $(this).parent('li').addClass("current");
