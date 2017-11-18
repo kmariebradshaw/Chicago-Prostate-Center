@@ -1,3 +1,12 @@
+var currentPage = location.pathname;
+$('a').each(function() {
+    var currentHref = $(this).attr('href');
+    if(currentHref == currentPage) {
+        $(this).parent('li').addClass("current");
+    }
+})
+
+
 window.theme = window.theme || {};
 
 /* ================ SLATE ================ */
