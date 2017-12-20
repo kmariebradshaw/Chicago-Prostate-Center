@@ -9,30 +9,7 @@
   }
   
   #initial-journy { margin-top: -20px; }
-  #ex-pop  {
-    display: inline-block;
-    position: absolute;
-    margin-top: -30%;
-    background-color: white;
-    width: 300px;
-    min-height: 250px;
-    margin-left: 39%;
-    border: 2px solid #0d5da3;
-    padding: 50px;
-    text-align: center;
-}
-  
-  .close {
-    margin-top: -40px;
-    position: relative;
-    margin-bottom: calc(40px - 12pt);
-    font-size: 12pt;
-    text-align: right;
-    margin-right: -30px;
-    font-weight: 600;
-    cursor: pointer; 
-}
-  
+
   #atf-side h5, #atf-side p { color: white; }
 
   #atf-main {
@@ -289,7 +266,7 @@
    <div class="info-box">
     <h2>Recovering from Prostate Cancer</h2>
     <p>Congratulations! <br> You have completed your treatment! <br>But what is life like after prostate cancer?</p>
-    <a href="/pages/prostate-cancer">What to expect after treatment</a>
+    <a href="/pages/follow-up">What to expect after treatment</a>
     </div>
   </center>
 </section>
@@ -333,22 +310,6 @@
 <img class="tw" src="{{'CPC-Footer.jpg' | asset_url}}" />
 
 <script>
-  $(document).ready(function(){
-  $("tr:even").css("background-color", "#5e9ecd");
-    $("tr:odd").css("background-color", "#0d5da3");
-});
-  
-  $('.lm').click(function() {
-    $('#ex-pop').hide(); 
-    $('#ex-pop').fadeIn(); 
-  }); 
-  
-  $(document).click(function() { 
-   if (!$('.lm').is(event.target) && (!$('#ex-pop').is(event.target)) )
-    {
-     $('#ex-pop').hide();
-    }
-  }); 
   $('.close').click(function(){
     $(this).parent().hide(); 
   }); 
