@@ -203,28 +203,33 @@
   <h5 id="atf-intro">-Brian J. Moran, MD</h5>
   <p>Medical Director, Chicago<br>Prostate Cancer Center</p>
   </div>
+  <div id="sub-header-slides"><h2></h2><h4></h4></div>
 </div>
 </section>
 <div>  
   <center>
     <div class="circle highlight main-slide" id="slide1" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/CPC-Home-Image.jpg?7844792783149817079"></div>
-    <div class="circle" id="slide2" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/building.jpg?17545526770728315187"></div>
-    <div class="circle" id="slide3" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/reception.jpg?7845200647143113927"></div>
-    <div class="circle" id="slide4" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/center.jpg?16301856489799910333"></div>
+    <div class="circle" id="slide2" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/building.jpg?17545526770728315187" img-caption="Welcome to the Chicago Prostate Cancer Center" img-subcaption="A One-Time, Outpatient, Minimally Surgical Prostate Cancer Treatment"></div>
+    <div class="circle" id="slide3" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/reception.jpg?7845200647143113927" img-caption="image 3"></div>
+    <div class="circle" id="slide4" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/center.jpg?16301856489799910333" img-caption="image 4"></div>
   </center>
 </div>
 <script>
   $('.circle').click(function(){
     $(this).addClass('highlight').siblings().removeClass('highlight');
     if (!$(this).hasClass('main-slide')){
-      $('#atf').children().addClass('invis'); 
+      $('#atf').children().not('#sub-header-slides').addClass('invis'); 
     }
     else {
       $('#atf').children().removeClass('invis'); 
     }
     var imageSource = $(this).attr('img-source'); 
+    var caption = $(this).attr('img-caption'); 
+    var subCaption = $(this).attr('img-subcaption'); 
     $('#atf').css("backgroundImage", "url(" + "'" + imageSource + "'" + ")"); 
- 
+    $("#sub-header-slides h2").empty().text(caption).fadeIn(); 
+    $("#sub-header-slides h4").empty().text(caption).fadeIn(); 
+
   });
   
   $(document).ready(function() {
