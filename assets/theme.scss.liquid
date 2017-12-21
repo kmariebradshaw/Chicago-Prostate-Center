@@ -17,7 +17,7 @@ body .form-vertical [type="submit"], .form-vertical .btn {
     color: white;
     padding: 20px;
     margin-bottom: 50px;
-}
+} 
 .one-third {width: 33%; } 
 body .rte .appoint-side-nav p { color: white !important; } 
 .rte p { color: black !important; }
@@ -38,6 +38,15 @@ body .rte .appoint-side-nav p { color: white !important; }
     background: -moz-linear-gradient(#f2f4f7, #fff); 
     background: linear-gradient(#f2f4f7, #fff); 
 }
+
+#sub-header-slides { 
+  text-align: center; 
+  background: rgba(255,255,255,0.75);
+  padding: 20px;
+  h2 { font-size: 36pt; color: #0d5da3 !important;}
+  h4 { font-size: 16pt; color: #0d5da3 !important; width: 85%; margin: 0 auto;}
+}
+
 body .main-content {
     padding-top: 131px !important;
 }
@@ -63,6 +72,7 @@ body header ul li .sub-nav-main {
   background-color: #0d5da3;
   text-align: left;
     width: 20%;
+    max-width: 250px;
   border-left: 1px solid white; 
   border-right: 1px solid white; 
   a{ color: white; } 
@@ -140,16 +150,21 @@ body .grid--table>.grid__item {
 
 .rte img {
     height: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    float: left;
+    margin: 10px 20px 10px 0;
 }
+
+body .pagination { margin-bottom: 50px; }
+
   
-.side-nav li div {
+.side-nav li div { 
     text-align: right;
     margin-top: -12%;
     margin-bottom: 10px;
     margin-right: 10px;
 }
+
+#shopify-section-blog-template .section-header h1, #shopify-section-article-template .section-header { color: black !important; }
 .side-nav{
     width: 30%;
     display: inline-block;
@@ -157,6 +172,8 @@ body .grid--table>.grid__item {
     vertical-align: top;
     font-size: 14pt;
 }
+
+.article__author { display: none !important; }
   
   .side-nav li a { color: white; text-decoration: none !important; font-weight: 600;  } 
   .rte li { margin-bottom: 0; } 

@@ -2,6 +2,7 @@
   #atf-side  {
     width: 33%;
     max-width: 250px;
+    margin: 25px;
     padding: 20px;
     background: #0d5da3;
     float: right;
@@ -9,35 +10,12 @@
   }
   
   #initial-journy { margin-top: -20px; }
-  #ex-pop  {
-    display: inline-block;
-    position: absolute;
-    margin-top: -30%;
-    background-color: white;
-    width: 300px;
-    min-height: 250px;
-    margin-left: 39%;
-    border: 2px solid #0d5da3;
-    padding: 50px;
-    text-align: center;
-}
-  
-  .close {
-    margin-top: -40px;
-    position: relative;
-    margin-bottom: calc(40px - 12pt);
-    font-size: 12pt;
-    text-align: right;
-    margin-right: -30px;
-    font-weight: 600;
-    cursor: pointer; 
-}
-  
+
   #atf-side h5, #atf-side p { color: white; }
 
   #atf-main {
     width: 40%;
-    padding: 20px;
+    padding: 70px 20px 20px 20px;
     max-width: 300px;
     display: inline-block;
     float: right;
@@ -126,13 +104,13 @@
   
   #atf { 
     background: url("{{'CPC-Home-Image.jpg' | asset_url }}"); 
-    padding: 50px 0px 50px 50px; 
-      box-shadow: 0px 15px 25px darkgrey;
-     background-repeat: no-repeat; 
-      background-size: cover; 
-          background-position: center; 
-    min-height: 50vh;
-   }
+    box-shadow: 0px 15px 25px darkgrey;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    height: 500px;
+    overflow: hidden;
+  }
 
    .invis { visibility: hidden; }
   
@@ -167,7 +145,7 @@
     letter-spacing: normal;
   }
   
-  section:not(:first-of-type) { margin-top: 100px; } 
+  section:not(:first-of-type) { margin-top: 25px; } 
   
   th,td { 
     border: 2px solid white;
@@ -203,7 +181,7 @@
     height: 15px;
     display: inline-block; 
     background: #0d5da3; 
-    margin: 50px 10px;
+    margin: 25px 10px;
     border-radius: 50%; 
     cursor: pointer; 
   }
@@ -216,9 +194,9 @@
 <section id="atf" class="clearfix">
   <div id="atf-side">
   <h5>Meet Dr. Moran</h5>
-	<p>Providing guidance for over 20,000 Men over the last 20 years</p>
+	<p>Providing guidance for over 20,000 men over the last 20 years</p>
 	<p>Research collaboration with Harvard Medical School, MD Anderson Cancer Center and Dana Farber Cancer Center</p>
-	<p>Dr. Moran is also the Director of Radiation Oncology at DuPage Medical Group</p>
+	<p>Dr. Moran is also the Director of Radiation Oncology at DuPage Medical Group Cancer Center in Lisle, IL.</p>
  </div>
   <div id="atf-main">
   <h2 id="atf-title">Straight Talk About Prostate Cancer</h2>
@@ -226,28 +204,34 @@
   <h5 id="atf-intro">-Brian J. Moran, MD</h5>
   <p>Medical Director, Chicago<br>Prostate Cancer Center</p>
   </div>
+  <div id="sub-header-slides" style="display: none;"><h2></h2><h4></h4></div>
 </div>
 </section>
 <div>  
   <center>
     <div class="circle highlight main-slide" id="slide1" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/CPC-Home-Image.jpg?7844792783149817079"></div>
-    <div class="circle" id="slide2" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/building.jpg?17545526770728315187"></div>
-    <div class="circle" id="slide3" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/reception.jpg?7845200647143113927"></div>
-    <div class="circle" id="slide4" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/center.jpg?16301856489799910333"></div>
+    <div class="circle" id="slide2" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/building.jpg?17545526770728315187" img-caption="Welcome to the Chicago Prostate Cancer Center" img-subcaption="A One-Time, Outpatient, Minimally Surgical Prostate Cancer Treatment"></div> 
+    <div class="circle" id="slide3" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/reception.jpg?7845200647143113927" img-caption="Compassion, Quality, Expertise, and Commitment" img-subcaption="See why our minimally-invasive surgical treatment may be your best option"></div>
+    <div class="circle" id="slide4" img-source="//cdn.shopify.com/s/files/1/2316/0095/t/1/assets/center.jpg?16301856489799910333" img-caption="Commitment" img-subcaption="Our entire team includes physicians, physicists, nurses, radiology technologists, and insurance experts. Our goal is to provide our patients with comprehensive care from consultation through follow up support. "></div>
   </center>
 </div>
 <script>
   $('.circle').click(function(){
+    var imageSource = $(this).attr('img-source'); 
+    var caption = $(this).attr('img-caption'); 
+    var subCaption = $(this).attr('img-subcaption'); 
     $(this).addClass('highlight').siblings().removeClass('highlight');
     if (!$(this).hasClass('main-slide')){
-      $('#atf').children().addClass('invis'); 
+      $('#atf').children().not('#sub-header-slides').hide(); 
+      $("#sub-header-slides h2").empty().text(caption);
+      $("#sub-header-slides h4").empty().text(subCaption);
+      $('#sub-header-slides').show();
     }
     else {
-      $('#atf').children().removeClass('invis'); 
+      $('#atf').children().not('#sub-header-slides').show(); 
+      $('#sub-header-slides').hide();
     }
-    var imageSource = $(this).attr('img-source'); 
     $('#atf').css("backgroundImage", "url(" + "'" + imageSource + "'" + ")"); 
- 
   });
   
   $(document).ready(function() {
@@ -265,75 +249,13 @@
     }, 10000)
    });
 </script>
-<section id="treat-opts">
-  <h1>Treatment Options Compared</h1>
-  <table>
-   <tr>
-    <th></th>
-    <th colspan="2" style="text-align: center;" class="cpc-ap em-left em-right em-top">Prostate Center Treatment</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <tr>
-    <th></th>
-    <th class="cpc-ap em-left">Seed Implants</th>
-    <th class="cpc-ap em-right">Focal Therapy</th> 
-    <th>Surgery</th>
-    <th>External Bean</th>
-  </tr>
-  <tr>
-    <td>Requires Surgery</td>
-    <td class="cpc-ap em-left">NO<br><a href="#" class="lm">learn more</a></td> 
-    <td class="cpc-ap em-right">NO<br><a href="#" class="lm">learn more</a></td> 
-    <td>YES<br><a href="#" class="lm">learn more</a></td> 
-    <td>NO<br><a href="#" class="lm">learn more</a></td> 
-  </tr>
-   <tr>
-    <td>In Patient</td>
-    <td class="cpc-ap em-left">NO<br><a href="#" class="lm">learn more</a></td> 
-    <td class="cpc-ap em-right">NO<br><a href="#" class="lm">learn more</a></td> 
-    <td>YES, requires catheter<br><a href="#" class="lm">learn more</a></td> 
-    <td>NO<br><a href="#" class="lm">learn more</a></td> 
-  </tr>
-      <tr>
-    <td>Length of Treatment</td>
-    <td class="cpc-ap em-left">24-48 hours<br><a href="#" class="lm">learn more</a></td> 
-    <td class="cpc-ap em-right">1 year<br><a href="#" class="lm">learn more</a></td> 
-    <td>2 weeks<br><a href="#" class="lm">learn more</a></td> 
-    <td>5 days a week for 9 weeks<br><a href="#" class="lm">learn more</a></td> 
-  </tr>
-       <tr>
-    <td>Lifestyle Effects</td>
-    <td class="cpc-ap em-left">Temporary urination irratation and frequency</td> 
-    <td class="cpc-ap em-right">Minimized urine control and minimized impotence</td> 
-    <td>Urine Control and unable to have erections</td> 
-    <td>Urine Control and unable to have erections</td> 
-  </tr>
-   <tr>
-    <td>Survival Rate</td>
-    <td class="cpc-ap em-left">80% survival rate</td> 
-    <td class="cpc-ap em-right">80% survival rate</td> 
-    <td>60% survival rate</td> 
-    <td>70% survival rate</td> 
-  </tr>
-   <tr>
-    <td>Insurance Coverage/Cost</td>
-    <td class="cpc-ap em-left">Average out of pocket of $1,000</td> 
-    <td class="cpc-ap em-right">Average out of pocket of $1,000</td> 
-    <td>Average out of pocket of $2,000</td> 
-    <td>Average out of pocket of $2,000</td> 
-  </tr>
-</table>
-  <div id="ex-pop" style="display: none;"><div class="close">X</div>EXAMPLE TEXT:<br>After the procedure, patients are taken to recovery and are typically discharged a few hours later. Most patients resume normal activities within 24-28 hours.<br><a href="/pages/prostate-cancer">Read More</a></div>
-  <p class="sm" style="font-size: 10pt; margin: 50px auto;">Prostate seed implant treatment is covered by many insurance carriers.<br> The Chicago Prostate Center accepts most insurance carriers including X,Y, Z</p>
-</section>
 <section id="journey">
   <h1>Prostate Cancer Journey</h1>
   <center>
   <div class="info-box">
     <div class="ar-journey" id="initial-journey">➡</div>
     <h2>Early Signs and Symptoms</h2>
-    <p>In it's early stages, prostate cancer may cause no symptoms. That's why regular testing is important for some men.</p>
+    <p>In its early stages, prostate cancer may cause no symptoms. That's why regular testing is important for some men.</p>
     <a href="/pages/prostate-cancer">Find out if you should be tested</a>
   </div>
    <div class="info-box">
@@ -351,13 +273,13 @@
    <div class="info-box">
     <h2>Recovering from Prostate Cancer</h2>
     <p>Congratulations! <br> You have completed your treatment! <br>But what is life like after prostate cancer?</p>
-    <a href="/pages/prostate-cancer">What to expect after treatment</a>
+    <a href="/pages/follow-up">What to expect after treatment</a>
     </div>
   </center>
 </section>
 
 <section id="testimonials">
-  <h1>Patient Testimonials</h1>
+  <h1 style="margin: 1px;">Patient Testimonials</h1>
   <h3>Don't just take our word for it.</h3>
   <center>
   <div>
@@ -368,14 +290,14 @@
     <i>Plainfield, Illinois</i></p>
   </div>
   <div>
-     <a href="/pages/testimonials"><img src="{{'man2.jpg'|asset_url}}" /></a>
+     <a href="/pages/testimonials"><img src="{{'man5.jpg'|asset_url}}" /></a>
     <p><b>"A very efficient operation at the Center."</b></p>
     <p>"Good, intelligent people who are above average compared to most hospitals/medical centers."</p>
     <p>-Robert H.<br>
     <i>Alburquerque, Michigan</i></p>
   </div>
   <div>
-     <a href="/pages/testimonials"><img src="{{'man3.jpg'|asset_url}}" /></a>
+     <a href="/pages/testimonials"><img src="{{'man6.jpeg'|asset_url}}" /></a>
     <p><b>"Thank you."</b></p>
     <p>"Very pleased with the level of competence of the entire staff. I very much appreciated the professional and personal treatment I received."</p>
     <p>-Herbert M.<br>
@@ -395,22 +317,6 @@
 <img class="tw" src="{{'CPC-Footer.jpg' | asset_url}}" />
 
 <script>
-  $(document).ready(function(){
-  $("tr:even").css("background-color", "#5e9ecd");
-    $("tr:odd").css("background-color", "#0d5da3");
-});
-  
-  $('.lm').click(function() {
-    $('#ex-pop').hide(); 
-    $('#ex-pop').fadeIn(); 
-  }); 
-  
-  $(document).click(function() { 
-   if (!$('.lm').is(event.target) && (!$('#ex-pop').is(event.target)) )
-    {
-     $('#ex-pop').hide();
-    }
-  }); 
   $('.close').click(function(){
     $(this).parent().hide(); 
   }); 
